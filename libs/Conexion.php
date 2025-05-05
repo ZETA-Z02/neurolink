@@ -36,9 +36,9 @@ class Conexion
   public function ConsultaCon($sql)
   {
     # Sirve para: SELECT
-    echo $sql;
+    //echo $sql;
     if (!$result = $this->conn->query($sql)) {
-      echo "Error: " . mysqli_error($this->conn);
+      //echo "Error: " . mysqli_error($this->conn);
       return false;
       exit();
     }
@@ -50,10 +50,10 @@ class Conexion
   public function ConsultaArray($sql)
   {
     # Sirve para: SELECT convertido en array
-    echo $sql;
+    //echo $sql;
 
     if (!$result = $this->conn->query($sql)) {
-      echo "Error. " . mysqli_error($this->conn);
+      //echo "Error. " . mysqli_error($this->conn);
       return false;
     }
 
