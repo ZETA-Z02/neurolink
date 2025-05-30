@@ -24,6 +24,11 @@ class ClientesModel extends Model{
         $result = $this->conn->ConsultaSin($sql);
         return $result;
     }
+    public function SumarPuntaje($idusuario,$puntaje){
+        $sql = "UPDATE usuarios SET puntaje=(SELECT puntaje FROM usuarios WHERE idusuario=$idusuario)+$puntaje WHERE idusuario=$idusuario;";
+        $result = $this->conn->ConsultaSin($sql);
+        return $result;
+    }
 }
 
 ?>

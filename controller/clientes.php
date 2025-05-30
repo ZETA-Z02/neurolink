@@ -73,6 +73,22 @@ class Clientes extends Controller{
     public function delete(){
 
     }
+    public function sumarPuntaje(){
+        $error = true;
+        $res = false;
+        $idusuario = $_POST['idusuario'];
+        $puntaje = $_POST['puntaje'];
+        if($data = $this->model->SumarPuntaje($idusuario,$puntaje)){
+            $res = true;
+            $error = false;
+        }
+        $response = array(
+            "success" => $res,
+            "error" => $error,
+            "data" => $data
+        );
+        echo json_encode($response);
+    }
 }
 
 
